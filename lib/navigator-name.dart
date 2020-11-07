@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(MaterialApp(
     title: 'Named Routes',
-    // Start the app with the "/" named route. In this case, the app starts
-    // on the FirstScreen widget.
   ));
 }
 

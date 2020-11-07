@@ -53,16 +53,8 @@ class MyLayout extends State<Action> {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => SecondRoute()))
               },
-              color: Colors.green,
+              color: Colors.red[100],
               child: Text("Navigator"),
-            ),
-            FlatButton(
-              onPressed: () => {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => MainScreen()))
-              },
-              color: Colors.green,
-              child: Text("Animate"),
             ),
             FlatButton(
               onPressed: () => {Navigator.pushNamed(context, '/second')},
@@ -72,19 +64,29 @@ class MyLayout extends State<Action> {
             FlatButton(
               onPressed: () => {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => MyAppArgument()))
+                    MaterialPageRoute(builder: (context) => MainScreen()))
               },
-              color: Colors.green,
-              child: Text("Argument"),
+              color: Colors.green[100],
+              child: Text("Animate"),
             ),
+            
             FlatButton(
               onPressed: () => {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => ReturnDataScreen()))
               },
-              color: Colors.green,
+              color: Colors.blue[100],
               child: Text("Return Data"),
             ),
+            FlatButton(
+              onPressed: () => {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => MyAppArgument()))
+              },
+              color: Colors.yellow[100],
+              child: Text("Argument"),
+            ),
+            
           ],
         ),
       )),
