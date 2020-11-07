@@ -1,6 +1,33 @@
 # lap4_1
-# Main
+# images
+## Main images
+   ![Main images](images/main.png)
+## navigator images
+   ![navigator images](images/navigator.png)
+
+## animate images
+   ![animate images](images/animate.png)
+
+## data images
+   ![data images](images/data.png)
+
+## argument images
+   ![argument images](argument/data.png)
+
+
+
+# Code
+## Main code
 ```dart
+import 'package:flutter/material.dart';
+import 'animate.dart';
+import 'arguments.dart';
+import 'return-data.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -11,19 +38,13 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
 class Action extends StatefulWidget {
   Action({Key key, this.title}) : super(key: key);
-
   final String title;
-
   @override
   MyLayout createState() => MyLayout();
 }
-
 class MyLayout extends State<Action> {
-  
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,7 +68,7 @@ class MyLayout extends State<Action> {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => SecondRoute()))
               },
-              color: Colors.green,
+              color: Colors.red[100],
               child: Text("Navigator"),
             ),
             FlatButton(
@@ -55,39 +76,36 @@ class MyLayout extends State<Action> {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => MainScreen()))
               },
-              color: Colors.green,
+              color: Colors.green[100],
               child: Text("Animate"),
             ),
+            
             FlatButton(
-              onPressed: () => {Navigator.pushNamed(context, '/second')},
-              color: Colors.green,
-              child: Text("Navigator name"),
+              onPressed: () => {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ReturnDataScreen()))
+              },
+              color: Colors.blue[100],
+              child: Text("Return Data"),
             ),
             FlatButton(
               onPressed: () => {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => MyAppArgument()))
               },
-              color: Colors.green,
+              color: Colors.yellow[100],
               child: Text("Argument"),
             ),
-            FlatButton(
-              onPressed: () => {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ReturnDataScreen()))
-              },
-              color: Colors.green,
-              child: Text("Return Data"),
-            ),
+            
           ],
         ),
       )),
     );
   }
 }
-```
 
-# Animate
+```
+## Animate code
 ``` dart
 class HeroApp extends StatelessWidget {
   @override
@@ -142,7 +160,7 @@ class DetailScreen extends StatelessWidget {
   }
 }
 ```
-# Navigator-name
+## Navigator-name code
 ```dart
 
 void main() {
@@ -167,7 +185,7 @@ class NameScreen extends StatelessWidget {
 }
 ```
 
-# Return-data
+## Return-data code
 ```dart
 import 'package:flutter/material.dart';
 

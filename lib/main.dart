@@ -57,11 +57,6 @@ class MyLayout extends State<Action> {
               child: Text("Navigator"),
             ),
             FlatButton(
-              onPressed: () => {Navigator.pushNamed(context, '/second')},
-              color: Colors.green,
-              child: Text("Navigator name"),
-            ),
-            FlatButton(
               onPressed: () => {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => MainScreen()))
@@ -103,7 +98,7 @@ class SecondRoute extends StatelessWidget {
       ),
       body: Center(
           child: FlatButton(
-        color: Colors.amberAccent,
+        color: Colors.blueAccent,
         child: Text("Back Home"),
         onPressed: () => {Navigator.pop(context)},
       )),
