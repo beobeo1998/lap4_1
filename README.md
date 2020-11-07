@@ -1,18 +1,114 @@
 # lap4_1
+# Main
+```dart
+import 'package:flutter/material.dart';
+import 'animate.dart';
+import 'arguments.dart';
+import 'return-data.dart';
 
-A new Flutter project.
+void main() {
+  runApp(MyApp());
+}
 
-## Getting Started
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Lap 4.1',
+      home: Action(title: 'Lap 4.1'),
+    );
+  }
+}
 
-This project is a starting point for a Flutter application.
+class Action extends StatefulWidget {
+  Action({Key key, this.title}) : super(key: key);
 
-A few resources to get you started if this is your first Flutter project:
+  final String title;
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+  @override
+  MyLayout createState() => MyLayout();
+}
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+class MyLayout extends State<Action> {
+  
 
-test
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Row(
+          children: [Icon(Icons.home), Text(widget.title)],
+        ),
+      ),
+      body: Center(
+          child: GestureDetector(
+        onTap: () => {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => SecondRoute()))
+        },
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            
+            FlatButton(
+              onPressed: () => {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SecondRoute()))
+              },
+              color: Colors.green,
+              child: Text("Navigator"),
+            ),
+            FlatButton(
+              onPressed: () => {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => MainScreen()))
+              },
+              color: Colors.green,
+              child: Text("Animate"),
+            ),
+            FlatButton(
+              onPressed: () => {Navigator.pushNamed(context, '/second')},
+              color: Colors.green,
+              child: Text("Navigator name"),
+            ),
+            FlatButton(
+              onPressed: () => {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => MyAppArgument()))
+              },
+              color: Colors.green,
+              child: Text("Argument"),
+            ),
+            FlatButton(
+              onPressed: () => {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ReturnDataScreen()))
+              },
+              color: Colors.green,
+              child: Text("Return Data"),
+            ),
+          ],
+        ),
+      )),
+    );
+  }
+}
+
+class SecondRoute extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Second Route"),
+      ),
+      body: Center(
+          child: FlatButton(
+        color: Colors.amberAccent,
+        child: Text("Back Home"),
+        onPressed: () => {Navigator.pop(context)},
+      )),
+    );
+  }
+}
+```
